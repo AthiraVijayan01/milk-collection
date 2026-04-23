@@ -8,9 +8,9 @@
     <th>Email</th> 
   </tr>
   <tr *ngFor="let u of users">
-    <td>{{ u.username }}</td>
     <td>{{ u.name }}</td>
     <td>{{ u.email }}</td>
+    <td>{{ u.phone}}</td>
     <td>{{ u.address }}</td>
     <td>
       <button (click)="editUser(u)">Edit</button>
@@ -25,6 +25,8 @@
     <h3>{{ isEdit ? 'Edit User' : 'Add User' }}</h3>
     <input [(ngModel)]="user.name" placeholder="name">
     <input [(ngModel)]="user.email" placeholder="Email">
+    <input [(ngModel)]="user.phone" placeholder="Phone">
+    <input [(ngModel)]="user.address" placeholder="Address">
     <div class="btn-group">
       <button (click)="saveUser()">
         {{ isEdit ? 'Update' : 'Save' }}

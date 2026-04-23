@@ -1,0 +1,8 @@
+ 
+ [{"id":1,"fatMin":"3","fatmax":"4","densityMin":"26","densityMax":"27","rate":"30"},
+ {"id":2,"fatMin":"4","fatmax":"4.5","densityMin":"27","densityMax":"28","rate":"40"},
+ {"id":3,"fatMin":"5","fatmax":"5","densityMin":"28","densityMax":"29","rate":"36"},
+ {"id":4,"fatMin":"6","fatmax":"6","densityMin":"29","densityMax":"30","rate":"41"},
+ {"id":5,"fatMin":"7","fatmax":"7","densityMin":"21","densityMax":"22","rate":"50"},
+ {"id":6,"fatMin":"8","fatmax":"8","densityMin":"22","densityMax":"24","rate":"46"},
+ {"id":7,"fatMin":"9","fatmax":"9","densityMin":"23","densityMax":"25","rate":"23"}]

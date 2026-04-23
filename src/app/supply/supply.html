@@ -16,11 +16,8 @@
 <div class="backdrop" *ngIf="showModal" (click)="closeModal()">
   <div class="modal" (click)="$event.stopPropagation()">
     <h2>{{ isEdit ? 'Update Product' : 'Add New' }}</h2>
-    <input [(ngModel)]="MinFat" type="number" placeholder=" Min Fat">
-    <input [(ngModel)]="MaxFat" type="number" placeholder="Max Fat">
-    <input [(ngModel)]="MinDens"  type="number" placeholder="Min Density">
-    <input [(ngModel)]="MaxDens" type="number" placeholder="Max Density">
-    <input [(ngModel)]="rate"  placeholder="Rate">
+    <input [(ngModel)]="MinFat" type="number" placeholder="Fat">
+    <input [(ngModel)]="MaxDens" type="number" placeholder="Density">
     <div class="actions">
       <button class="save" (click)="saveProduct()">
         {{ isEdit ? 'Update' : 'Save' }}

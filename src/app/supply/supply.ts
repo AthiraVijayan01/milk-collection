@@ -20,7 +20,6 @@ interface Product {
 })
 export class Supply implements OnInit {
 
-
   products: Product[] = [];
   // initems: Initems[] = [];
   total: number = 0;
@@ -32,7 +31,6 @@ export class Supply implements OnInit {
   MinDens: number | null = null;
   MaxDens: number | null = null;
   rate:number | null = null;
-
   showModal = false;
   isEdit = false;
   editId: number | null = null;
@@ -89,39 +87,7 @@ export class Supply implements OnInit {
     this.closeModal();
   }
 
-  // getInsentive(item:initems): number {
-  //   let insentive = 0;
-
-  //   switch (item.rate) {
-  //     case '':
-  //       if (item.rate > 70) {
-  //          insentive += 20;
-  //       }
-  //       break;
-
-  //     case 1:
-  //       if (item.rate > 60) {
-  //          insentive += 30;
-  //       }
-  //       break;
-
-  //     case 2:
-  //       if (item.rate > 50)
-  //       {
-  //          insentive += 40;
-  //       }
-  //       break;
-
-  //     case 3:
-  //        if (item.rate > 40)
-  //        {
-  //          insentive += 30;
-  //        }
-  //       break;
-  //   }
-  //   return insentive;
-  // }
- 
+  
   // calculateBaseAmount(){
   //   const result=this.initems.reduce(
   //     (acc,item)=>{
