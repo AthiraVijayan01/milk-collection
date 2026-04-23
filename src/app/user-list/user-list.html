@@ -23,8 +23,8 @@
 <div class="modal" *ngIf="showModal">
   <div class="modal-content">
     <h3>{{ isEdit ? 'Edit User' : 'Add User' }}</h3>
-    <input [(ngModel)]="user.username" placeholder="Username">
-    <input [(ngModel)]="user.name" placeholder="Name">
+    <input [(ngModel)]="user.name" placeholder="name">
+    <input [(ngModel)]="user.email" placeholder="Email">
     <div class="btn-group">
       <button (click)="saveUser()">
         {{ isEdit ? 'Update' : 'Save' }}
