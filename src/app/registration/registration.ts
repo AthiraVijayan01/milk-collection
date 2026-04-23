@@ -42,8 +42,7 @@ export class Registration implements OnInit {
       user.push({
         name: formData.name,
         username: formData.username,
-        password: formData.password,
-        role: 'user'
+        password: formData.password
       });
 
       localStorage.setItem('user', JSON.stringify(user));
