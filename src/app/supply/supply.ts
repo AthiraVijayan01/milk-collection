@@ -121,6 +121,14 @@ export class Supply implements OnInit {
     }
     return insentive;
   }
+ 
+  calculateBaseAmount(){
+    const result=this.initems.reduce(
+      (acc,item)=>{
+        const baseAmount=
+      }
+    )
+  }
 
   calculateTotal() {
     const result = this.initems.reduce(

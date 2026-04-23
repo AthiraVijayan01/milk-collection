@@ -12,7 +12,6 @@ import { Router, RouterModule } from '@angular/router';
 export class Registration implements OnInit {
 
   registerForm!: FormGroup;
-
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
@@ -48,7 +47,6 @@ export class Registration implements OnInit {
       });
 
       localStorage.setItem('users', JSON.stringify(users));
-
       alert('Registration successful!');
       this.router.navigate(['/login']);
 
