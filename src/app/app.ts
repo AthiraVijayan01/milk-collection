@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Registration } from './registration/registration';
 import { Login } from './login/login';
 import { Home } from './home/home';
+import { UserList } from './user-list/user-list';
 import { Supply } from './supply/supply';
 
 @Component({

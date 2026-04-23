@@ -41,6 +41,10 @@ export class Home implements OnInit {
   goTosupply() {
     this.router.navigate(['/supply']);
   }
+  
+  goTouser() {
+    this.router.navigate(['/user-list']);
+  }
 
   logout() {
     localStorage.clear();
