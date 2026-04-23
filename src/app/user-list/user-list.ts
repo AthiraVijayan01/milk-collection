@@ -34,22 +34,22 @@ export class UserList implements OnInit {
     address: ''
   };
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.loadUsers();
   }
 
-  loadUsers(): void {
+  loadUsers(){
     this.user = JSON.parse(localStorage.getItem('user') || '[]');
   }
-  openAddModal(): void {
+  openAddModal(){
     this.reset();
     this.isEdit = false;
     this.showModal = true;
   }
-  closeModal(): void {
+  closeModal(){
     this.showModal = false;
   }
-  saveUser(): void {
+  saveUser(){
     let user: User[] = JSON.parse(localStorage.getItem('user') || '[]');
     if (this.isEdit) {
       user = user.map(u =>
@@ -68,13 +68,13 @@ export class UserList implements OnInit {
     this.reset();
   }
 
-  editUser(u: User): void {
+  editUser(u: User){
     this.user = { ...u };
     this.isEdit = true;
     this.showModal = true;
   }
 
-  deleteUser(id: number): void {
+  deleteUser(id: number){
     let user: User[] = JSON.parse(localStorage.getItem('user') || '[]');
     user = user.filter(u => u.id !== id);
     localStorage.setItem('user', JSON.stringify(user));

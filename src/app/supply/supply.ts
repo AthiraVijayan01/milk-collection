@@ -21,6 +21,7 @@ interface Product {
 export class Supply implements OnInit {
 
   products: Product[] = [];
+  // initem: inItems[]=[];
   total: number = 0;
   insentive: number = 0;
 
@@ -33,26 +34,26 @@ export class Supply implements OnInit {
   isEdit = false;
   editId: number | null = null;
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.loadProducts();
   }
 
-  loadProducts(): void {
+  loadProducts(){
     const data = localStorage.getItem('milk');
     this.products = data ? JSON.parse(data) : [];
   }
 
-  openModal(): void {
+  openModal(){
     this.showModal = true;
     this.isEdit = false;
   }
 
-  closeModal(): void {
+  closeModal(){
     this.showModal = false;
     this.resetForm();
   }
 
-  resetForm(): void {
+  resetForm(){
     this.MinFat = null;
     this.MaxFat = null;
     this.MinDens = null;
@@ -62,12 +63,12 @@ export class Supply implements OnInit {
     this.editId = null;
   }
 
-  editProduct(p: Product): void {
+  editProduct(p: Product){
     this.showModal = true;
     this.isEdit = true;
 
   }
-  saveProduct(): void {
+  saveProduct(){
     if (!this.MinFat || !this.MaxFat || !this.MinDens || !this.MaxFat || !this.rate) return;
     let products: Product[] = JSON.parse(localStorage.getItem('milk') || '[]');
     if (this.isEdit && this.editId !== null) {
@@ -89,7 +90,8 @@ export class Supply implements OnInit {
   // calculateBaseAmount(){
   //   const result=this.initems.reduce(
   //     (acc,item)=>{
-  //       const baseAmount=
+  //       const baseAmount = item.l * this.rate;
+  //       const insentive = item.l*2;
   //     }
   //   )
   // }
