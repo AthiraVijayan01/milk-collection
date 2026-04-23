@@ -32,21 +32,21 @@ export class Registration implements OnInit {
   onSubmit() {
     if (this.registerForm.valid) {
       const formData = this.registerForm.value;
-      const users = JSON.parse(localStorage.getItem('users') || '[]');
-      const exists = users.find((u: any) => u.username === formData.username);
+      const user = JSON.parse(localStorage.getItem('user') || '[]');
+      const exists = user.find((u: any) => u.username === formData.username);
       if (exists) {
         alert('User already exists!');
         return;
       }
 
-      users.push({
+      user.push({
         name: formData.name,
         username: formData.username,
         password: formData.password,
         role: 'user'
       });
 
-      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('user', JSON.stringify(user));
       alert('Registration successful!');
       this.router.navigate(['/login']);
 

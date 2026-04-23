@@ -12,7 +12,7 @@ interface User {
 }
 
 @Component({
-  selector: 'app-user-management',
+  selector: 'app-user-list',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './user-list.html',
@@ -20,7 +20,7 @@ interface User {
 })
 export class UserList implements OnInit {
 
-  users: User[] = [];
+  Users: User[] = [];
 
   showModal = false;
   isEdit = false;
@@ -32,7 +32,6 @@ export class UserList implements OnInit {
     email: '',
     phone: '',
     address: ''
-    
   };
 
   ngOnInit(): void {
@@ -42,7 +41,6 @@ export class UserList implements OnInit {
   loadUsers(): void {
     this.user = JSON.parse(localStorage.getItem('user') || '[]');
   }
-
   openAddModal(): void {
     this.reset();
     this.isEdit = false;

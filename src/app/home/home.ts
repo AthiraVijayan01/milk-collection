@@ -28,7 +28,7 @@ export class Home implements OnInit {
     if (local) {
       this.productslist = JSON.parse(local);
     } else {
-      this.http.get<Products[]>('assets/datas.json').subscribe({
+      this.http.get<Products[]>('datas.json').subscribe({
         next: data => {
           this.productslist = data;
           localStorage.setItem('products', JSON.stringify(data));

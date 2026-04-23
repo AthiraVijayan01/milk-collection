@@ -21,10 +21,8 @@ interface Product {
 export class Supply implements OnInit {
 
   products: Product[] = [];
-  // initems: Initems[] = [];
   total: number = 0;
   insentive: number = 0;
-
 
   MinFat:number | null = null;
   MaxFat: number | null = null;
