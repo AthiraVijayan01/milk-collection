@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h1>Milk Supply</h1>
+
+  <button class="add-btn" (click)="openModal()">+ Add</button>
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let p of products">
+      <h3>{{ p.MinFat}}</h3>
+      <p>{{ p.MaxFat }}</p>
+      <p>{{ p.MinDens }}</p>
+      <p>{{ p.MaxDens }}</p>
+      <p>{{ p.rate}}</p>
+    </div>
+  </div>
+</div>
+<div class="backdrop" *ngIf="showModal" (click)="closeModal()">
+  <div class="modal" (click)="$event.stopPropagation()">
+    <h2>{{ isEdit ? 'Update Product' : 'Add New' }}</h2>
+    <input [(ngModel)]="MinFat" type="number" placeholder=" Min Fat">
+    <input [(ngModel)]="MaxFat" type="number" placeholder="Max Fat">
+    <input [(ngModel)]="MinDens"  type="number" placeholder="Min Density">
+    <input [(ngModel)]="MaxDens" type="number" placeholder="Max Density">
+    <input [(ngModel)]="rate"  placeholder="Rate">
+    <div class="actions">
+      <button class="save" (click)="saveProduct()">
+        {{ isEdit ? 'Update' : 'Save' }}
+      </button>
+      <button class="cancel" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
