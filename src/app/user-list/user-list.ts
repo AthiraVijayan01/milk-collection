@@ -40,9 +40,9 @@ export class UserList implements OnInit {
   }
 
   loadUsers(): void {
-    this.users = JSON.parse(localStorage.getItem('users') || '[]');
+    this.user = JSON.parse(localStorage.getItem('user') || '[]');
   }
-  
+
   openAddModal(): void {
     this.reset();
     this.isEdit = false;
@@ -52,19 +52,19 @@ export class UserList implements OnInit {
     this.showModal = false;
   }
   saveUser(): void {
-    let users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+    let user: User[] = JSON.parse(localStorage.getItem('user') || '[]');
     if (this.isEdit) {
-      users = users.map(u =>
+      user = user.map(u =>
         u.id === this.user.id ? this.user : u
       );
     } else {
-      users.push({
+      user.push({
         ...this.user,
         id: Date.now()
       });
     }
 
-    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem('user', JSON.stringify(user));
     this.loadUsers();
     this.closeModal();
     this.reset();
@@ -77,9 +77,9 @@ export class UserList implements OnInit {
   }
 
   deleteUser(id: number): void {
-    let users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
-    users = users.filter(u => u.id !== id);
-    localStorage.setItem('users', JSON.stringify(users));
+    let user: User[] = JSON.parse(localStorage.getItem('user') || '[]');
+    user = user.filter(u => u.id !== id);
+    localStorage.setItem('user', JSON.stringify(user));
     this.loadUsers();
   }
 

@@ -22,7 +22,7 @@ export class Supply implements OnInit {
 
 
   products: Product[] = [];
-  initems: Initems[] = [];
+  // initems: Initems[] = [];
   total: number = 0;
   insentive: number = 0;
 
@@ -89,55 +89,55 @@ export class Supply implements OnInit {
     this.closeModal();
   }
 
-  getInsentive(item:initems): number {
-    let insentive = 0;
+  // getInsentive(item:initems): number {
+  //   let insentive = 0;
 
-    switch (item.rate) {
-      case '':
-        if (item.rate > 70) {
-           insentive += 20;
-        }
-        break;
+  //   switch (item.rate) {
+  //     case '':
+  //       if (item.rate > 70) {
+  //          insentive += 20;
+  //       }
+  //       break;
 
-      case 1:
-        if (item.rate > 60) {
-           insentive += 30;
-        }
-        break;
+  //     case 1:
+  //       if (item.rate > 60) {
+  //          insentive += 30;
+  //       }
+  //       break;
 
-      case 2:
-        if (item.rate > 50)
-        {
-           insentive += 40;
-        }
-        break;
+  //     case 2:
+  //       if (item.rate > 50)
+  //       {
+  //          insentive += 40;
+  //       }
+  //       break;
 
-      case 3:
-         if (item.rate > 40)
-         {
-           insentive += 30;
-         }
-        break;
-    }
-    return insentive;
-  }
+  //     case 3:
+  //        if (item.rate > 40)
+  //        {
+  //          insentive += 30;
+  //        }
+  //       break;
+  //   }
+  //   return insentive;
+  // }
  
-  calculateBaseAmount(){
-    const result=this.initems.reduce(
-      (acc,item)=>{
-        const baseAmount=
-      }
-    )
-  }
+  // calculateBaseAmount(){
+  //   const result=this.initems.reduce(
+  //     (acc,item)=>{
+  //       const baseAmount=
+  //     }
+  //   )
+  // }
 
-  calculateTotal() {
-    const result = this.initems.reduce(
-      (acc, item) => {
-        const itemTotal = item.total+ item.insentive;
-        const FinalAmount = this.getInsentive(item);
-        return acc;
-      },
-      { total: 0, insentive: 0 }
-    );
-  }
+  // calculateTotal() {
+  //   const result = this.initems.reduce(
+  //     (acc, item) => {
+  //       const itemTotal = item.total+ item.insentive;
+  //       const FinalAmount = this.getInsentive(item);
+  //       return acc;
+  //     },
+  //     { total: 0, insentive: 0 }
+  //   );
+  // }
 }
