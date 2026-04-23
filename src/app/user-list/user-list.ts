@@ -9,7 +9,6 @@ interface User {
   email: string;
   phone: string;
   address: string;
-  
 }
 
 @Component({
@@ -43,7 +42,7 @@ export class UserList implements OnInit {
   loadUsers(): void {
     this.users = JSON.parse(localStorage.getItem('users') || '[]');
   }
-
+  
   openAddModal(): void {
     this.reset();
     this.isEdit = false;
